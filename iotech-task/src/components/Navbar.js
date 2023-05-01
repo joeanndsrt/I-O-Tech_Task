@@ -1,14 +1,17 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+    const navigate = useNavigate();
+
     return (
-      <nav class="navbar bg-body-tertiary" id='navbar'>
-          <div class="container-fluid">
-              <div class="navbar-brand">
-                  <a id="logo" class="navbar-brand" >GYM LOGO</a>
+      <nav className="navbar bg-body-tertiary" id='navbar'>
+          <div className="container-fluid">
+              <div className="navbar-brand">
+                  <a id="logo" className="navbar-brand" onClick={() => navigate('/')}>GYM LOGO</a>
               </div>
-              <div class="navbar-right">
-                  <i class="fa-solid fa-circle-user fa-2xl"></i>
+              <div className="navbar-right">
+                  <i className="fa-solid fa-circle-user fa-2xl"></i>
               </div>
           </div>
       </nav>

@@ -1,24 +1,29 @@
 import React from 'react'
 import { Sidebar, Menu, MenuItem, useProSidebar } from "react-pro-sidebar";
+import { useNavigate } from 'react-router-dom';
 
 const SidebarMenu = () => {
     const { collapseSidebar } = useProSidebar();
+    const navigate = useNavigate();
 
   return (
     <Sidebar style={{ height: "100vh" }}>
         <Menu>
           <MenuItem
-            icon={<i class="fa-solid fa-bars"></i>}
+            icon={<i className="fa-solid fa-bars"></i>}
             onClick={() => {
               collapseSidebar();
             }}
             style={{ textAlign: "center" }}
           >
             {" "}
-            <h2>Menu</h2>
           </MenuItem>
-          <MenuItem icon={<i class="fa-solid fa-users"></i>}> Clients </MenuItem>
-          <MenuItem icon={<i class="fa-solid fa-dumbbell"></i>}> Classes </MenuItem>
+          <MenuItem icon={<i className="fa-solid fa-users"></i>} onClick={() => navigate('/clients')}>
+            Clients
+          </MenuItem>
+          <MenuItem icon={<i className="fa-solid fa-dumbbell"></i>} onClick={() => navigate('/classes')}>
+            Classes
+          </MenuItem>
         </Menu>
     </Sidebar>
   )
