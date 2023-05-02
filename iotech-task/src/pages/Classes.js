@@ -16,16 +16,11 @@ const Classes = () => {
     fetchData();
   }, []);
   
-  // const handleDelete = async (id) => {
-  //   await classesService.deleteClass(id);
-  //   setClasses(classes.filter((c) => c.id !== id));
-  // };
-  
   return (
     <div className="container">
       <h1>Classes Preview Page</h1>
       <Button variant="contained" className="m-4" onClick={() => navigate('/classes/edit', { state: { classes }})}>
-        Edit Classes
+        <i className="fa-solid fa-pen-to-square"></i>
       </Button>
       <Grid container rowSpacing={8} columnSpacing={10}>
           <Class classes={classes}/>

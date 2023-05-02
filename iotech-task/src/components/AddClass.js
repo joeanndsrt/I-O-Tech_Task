@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Button, Dialog, DialogTitle, DialogContent, TextField } from '@mui/material';
-import classesService from '../services/classesService';
 
 const AddClass = ({ open, handleClose, addNewClass }) => {
   const [classData, setClassData] = useState({

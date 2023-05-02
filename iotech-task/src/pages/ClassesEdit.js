@@ -16,7 +16,7 @@ const ClassesEdit = () => {
 
     const onClassUpdate = async (updatedClass) => {
         try {
-            await classesService.updateClass(updatedClass.id, updatedClass);
+            await classesService.updateClassById(updatedClass.id, updatedClass);
             const updatedClasses = classes.map((c) => (c.id === updatedClass.id ? updatedClass : c));
             setClasses(updatedClasses);
         } catch (error) {
@@ -27,7 +27,7 @@ const ClassesEdit = () => {
 
     const onClassDelete = async (id) =>{
         try {
-            await classesService.deleteClass(id);
+            await classesService.deleteClassById(id);
             const updatedClasses = classes.filter(c => c.id !== id);
             setClasses(updatedClasses);
         } catch (error) {
@@ -48,7 +48,7 @@ const ClassesEdit = () => {
         <>
             <h1>Edit Classes</h1>
             <Button variant="contained" className="m-4" onClick={() => navigate('/classes')}>
-                Preview Classes
+                <i class="fa-solid fa-arrow-left"></i>
             </Button>
             <Button variant="contained" onClick={handleClickOpen}>
                 <i className="fa-solid fa-plus"></i>
