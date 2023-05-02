@@ -1,40 +1,39 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { Card, CardContent, CardMedia, Grid, Chip } from '@mui/material';
 
 const Class = ({ classes }) => {
+
+  //function to check if image in classes api has a valid image file
+  function isValidUrl(url) {
+    try {
+      new URL(url);
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+
   return (
     <>
       {classes && classes.map((c) => (
         c.id && // check if the id is not null or undefined
-        <tr key={c.id}>
-          <td>{c.title}</td>
-          <td>{c.description}</td>
-          <td>{c.coach_name}</td>
-          <td>{c.coach_brief}</td>
-          <td>{c.timing}</td>
-          <td>{c.price}</td>
-          {/* BUTTON BELOW FOR EDIT CLASSES PAGE */}
-          {/* <td>
-            <Link
-              to={`/classes/${c.id}`}
-              className="btn btn-primary me-2"
-            >
-              View
-            </Link>
-            <Link
-              to={`/classes/edit/${c.id}`}
-              className="btn btn-warning me-2"
-            >
-              Edit
-            </Link>
-            <button
-              className="btn btn-danger"
-              
-            >
-              Delete
-            </button>
-          </td> */}
-        </tr>
+        <Grid item xs={4}>
+          <Card  sx={{ maxWidth: 345 }} key={c.id}> 
+          <CardMedia
+            sx={{ height: 170 }}
+            image={c.image ? (isValidUrl(c.image) ? c.image : 'https://via.placeholder.com/200x200.png?text=Image+Not+Available') : 'https://via.placeholder.com/200x200.png?text=Image+Not+Available'}
+            title='Class Image'
+          />
+            <CardContent>
+              <h2>{c.title}</h2>
+              <p>{c.description}</p>
+              <p>{c.coach_name}</p>
+              <p>{c.coach_brief}</p>
+              <p>{c.timing}</p>
+              <Chip label={'$ ' + c.price} color='success'></Chip>
+            </CardContent>
+        </Card>
+      </Grid>
       ))}
     </>
   )

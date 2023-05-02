@@ -6,6 +6,7 @@ import SidebarMenu from './components/SidebarMenu';
 import Home from './pages/Home';
 import Clients from './pages/Clients';
 import Classes from "./pages/Classes";
+import ClassesEdit from "./pages/ClassesEdit";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/clients" element={<Clients />} />
                 <Route path="/classes" element={<Classes />} />
+                <Route path="/classes/edit" element={<ClassesEdit />} />
               </Routes>
             </div>
           </div>
