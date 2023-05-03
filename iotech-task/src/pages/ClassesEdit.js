@@ -47,21 +47,33 @@ const ClassesEdit = () => {
     return (
         <>
             <h1>Edit Classes</h1>
-            <Button variant="contained" className="m-4" onClick={() => navigate('/classes')}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '80%', margin: 'auto' }}>
+                <Button
+                variant="contained"
+                className='mb-4'
+                onClick={() => navigate('/classes')}
+                sx={{ backgroundColor: "#020e62", width: "60px", height: "40px", color: "#fff" }}
+                >
                 <i class="fa-solid fa-arrow-left"></i>
-            </Button>
-            <Button variant="contained" onClick={handleClickOpen}>
+                </Button>
+                <Button
+                variant="contained"
+                className='mb-4'
+                onClick={handleClickOpen}
+                sx={{ backgroundColor: "#020e62", width: "60px", height: "40px", color: "#fff" }}
+                >
                 <i className="fa-solid fa-plus"></i>
-            </Button>
-            <TableContainer>
-                <Table>
-                    <TableHead>
+                </Button>
+            </div>
+            <TableContainer style={{ width: '80%', margin: 'auto', borderRadius: '10px' }}>
+                <Table  style={{ maxWidth: '100%' }}>
+                    <TableHead className='table-head'>
                         <TableRow>
-                            <TableCell>Class Name</TableCell>
-                            <TableCell>Coach Name</TableCell>
-                            <TableCell>Timing</TableCell>
-                            <TableCell>Price</TableCell>
-                            <TableCell>Action</TableCell>
+                            <TableCell style={{ color: '#fff' }}>Class Name</TableCell>
+                            <TableCell style={{ color: '#fff' }}>Coach Name</TableCell>
+                            <TableCell style={{ color: '#fff' }}>Timing</TableCell>
+                            <TableCell style={{ color: '#fff' }}>Price</TableCell>
+                            <TableCell align="center" style={{ color: '#fff' }}>Action</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>

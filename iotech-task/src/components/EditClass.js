@@ -27,18 +27,24 @@ const EditClass = ({ classes, onClassUpdate, onClassDelete }) => {
             <TableCell>{classes.timing}</TableCell>
             <TableCell>{classes.price}</TableCell>
             <TableCell>
-                <Button variant="contained" className='m-1' onClick={() => setOpen(!open)}><i className="fa-solid fa-pen-to-square"></i></Button>
-                <Button variant="contained" className='m-1' onClick={handleDelete}><i className="fa-solid fa-trash"></i></Button>
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                    <Button variant="contained" sx={{ backgroundColor: "#020e62", width: "60px", height: "40px", color: "#fff", mr: 1 }} onClick={() => setOpen(!open)}>
+                      <i className="fa-solid fa-pen-to-square"></i>
+                    </Button>
+                    <Button variant="contained" sx={{ backgroundColor: "#020e62", width: "60px", height: "40px", color: "#fff" }} onClick={handleDelete}>
+                      <i className="fa-solid fa-trash"></i>
+                    </Button>
+                </div>
             </TableCell>
        </TableRow>
 
        {/* Update Dropdown */}
-       <TableRow>
+       <TableRow sx={{ backgroundColor: "#f0f0f0" }}>
             <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
                 <Collapse in={open} timeout="auto" unmountOnExit>
                     <Box sx={{ margin: 1 }}>
                         <h5>Update Class {classes.title}</h5>
-                        <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
+                        <FormControl sx={{ m: 1, width: '100%' }} variant="outlined">
                             <OutlinedInput
                                 id="outlined-Class"
                                 aria-describedby="outlined-class-helper-text"
@@ -50,7 +56,7 @@ const EditClass = ({ classes, onClassUpdate, onClassDelete }) => {
                             />
                             <FormHelperText id="outlined-class-helper-text">Class Name</FormHelperText>
                         </FormControl>
-                        <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
+                        <FormControl sx={{ m: 1, width: '100%' }} variant="outlined">
                             <OutlinedInput
                                 id="outlined-Class"
                                 aria-describedby="outlined-class-helper-text"
@@ -62,7 +68,7 @@ const EditClass = ({ classes, onClassUpdate, onClassDelete }) => {
                             />
                             <FormHelperText id="outlined-class-helper-text">Coach Name</FormHelperText>
                         </FormControl>
-                        <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
+                        <FormControl sx={{ m: 1, width: '100%' }} variant="outlined">
                             <OutlinedInput
                                 id="outlined-Class"
                                 aria-describedby="outlined-class-helper-text"
@@ -74,19 +80,20 @@ const EditClass = ({ classes, onClassUpdate, onClassDelete }) => {
                             />
                             <FormHelperText id="outlined-class-helper-text">Timing</FormHelperText>
                         </FormControl>
-                        <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
+                        <FormControl sx={{ m: 1, width: '100%' }} variant="outlined">
                             <OutlinedInput
                                 id="outlined-Class"
                                 aria-describedby="outlined-class-helper-text"
                                 inputProps={{
                                 'aria-label': 'Price',
                                 }}
+                                type='number'
                                 value={price}
                                 onChange={(event) => setPrice(event.target.value)}
                             />
                             <FormHelperText id="outlined-class-helper-text">Price</FormHelperText>
                         </FormControl>
-                        <Button variant="contained" color="success" onClick={handleUpdate}>
+                        <Button variant="contained" sx={{ m: 1, width: '100%', backgroundColor: "#020e62", color: "#fff" }} onClick={handleUpdate}>
                             Update
                         </Button>
                     </Box>

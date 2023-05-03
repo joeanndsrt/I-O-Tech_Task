@@ -6,12 +6,14 @@ import { Button, Grid } from '@mui/material';
 
 const Classes = () => {
   const [classes, setClasses] = useState([]);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
       const result = await classesService.getClasses();
       setClasses(result);
+      setLoading(false);
     };
     fetchData();
   }, []);
@@ -19,12 +21,22 @@ const Classes = () => {
   return (
     <div className="container">
       <h1>Classes Preview Page</h1>
-      <Button variant="contained" className="m-4" onClick={() => navigate('/classes/edit', { state: { classes }})}>
-        <i className="fa-solid fa-pen-to-square"></i>
-      </Button>
-      <Grid container rowSpacing={8} columnSpacing={10}>
+      <div className="button-container2 mt-2 mb-4">
+        <Button 
+          variant="contained" 
+          onClick={() => navigate('/classes/edit', { state: { classes }})}
+          sx={{ backgroundColor: "#020e62", width: "80px", height: "40px", color: "#fff" }}
+        >
+          <i className="fa-solid fa-pen-to-square"></i>
+        </Button>
+      </div>
+      {loading ? (
+        <h1>LOADING...</h1>
+      ) : (
+        <Grid container rowSpacing={8} columnSpacing={10}>
           <Class classes={classes}/>
       </Grid>
+      )}
     </div>
   );
 };

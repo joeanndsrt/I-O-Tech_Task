@@ -37,3 +37,62 @@
   }
 }
 
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #020e62;
+}
+
+.welcome {
+  font-size: 5rem;
+}
+
+.title {
+  font-size: 3rem;
+}
+
+.name {
+  font-size: 2rem;
+}
+
+.my-menu {
+  font-size: 25px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+
+.button-container button {
+  margin-right: 7.5rem;
+}
+
+.button-container2 {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+
+.button-container2 button {
+  margin-right: 1.5rem;
+}
+
+.Card-root {
+  border: 1px solid #020e62;
+}
+
+.table-head{
+  background-color: #020e62;
+  color: #fff;
+}
+
+.table-cell{
+  color: #fff;
+}

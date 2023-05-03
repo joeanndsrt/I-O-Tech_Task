@@ -74,7 +74,7 @@ const AddClass = ({ open, handleClose, addNewClass }) => {
     <Dialog open={open} onClose={handleClose}>
       <DialogTitle>Add a Class</DialogTitle>
       <DialogContent>
-        <Button variant="contained" component="label">
+        <Button variant="contained" component="label" style={{ backgroundColor: '#020E62', color: '#fff'}}>
           Upload Image
           <input hidden accept="image/*" multiple type="file" onChange={handleFileInputChange}/>
         </Button>
@@ -123,7 +123,7 @@ const AddClass = ({ open, handleClose, addNewClass }) => {
           margin="dense"
           id="price"
           label="Price"
-          type="text"
+          type="number"
           fullWidth
           variant="standard"
           value={classData.price}
@@ -157,7 +157,7 @@ const AddClass = ({ open, handleClose, addNewClass }) => {
           error={errors.coach_brief}
           required
         />
-        <Button variant="contained" color="success" className='mt-4' onClick={handleAddClass}>
+        <Button variant="contained" style={{ width: '100%', backgroundColor: '#020E62' }} className='mt-4' onClick={handleAddClass}>
           Add Class
         </Button>
       </DialogContent>

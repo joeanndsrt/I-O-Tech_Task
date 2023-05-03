@@ -1,22 +1,26 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Avatar } from '@mui/material'
+import logo from '../assets/logo.png'
 
 const Navbar = () => {
-    const navigate = useNavigate();
-
     return (
-      <nav className="navbar bg-body-tertiary" id='navbar'>
-          <div className="container-fluid">
-              <div className="navbar-brand">
-                  <a id="logo" className="navbar-brand" onClick={() => navigate('/')}>GYM LOGO</a>
-              </div>
-              <div className="navbar-right">
-                  <i className="fa-solid fa-circle-user fa-2xl"></i>
-              </div>
-          </div>
-      </nav>
+        <nav className="navbar" id='navbar' style={{backgroundColor: "#020e62"}}>
+            <div className="container-fluid">
+                <Link to="/" className="navbar-brand d-flex align-items-center">
+                    <img src={logo} alt="Logo" width="60" height="50"/>
+                    <h4 className="ms-2" style={{color: "#fff"}}>G-Y-M</h4>
+                </Link>
+                <div className="d-flex align-items-center" style={{color: "#fff"}}>
+                    <h5 className="me-3">Admin</h5>
+                    <Avatar
+                        alt="Admin"
+                        sx={{ width: 40, height: 40 }}
+                    />
+                </div>
+            </div>
+        </nav>
     )
-  }
-  
+}
 
-export default Navbar
+export default Navbar;
