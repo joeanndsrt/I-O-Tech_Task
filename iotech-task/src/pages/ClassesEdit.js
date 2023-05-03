@@ -24,7 +24,6 @@ const ClassesEdit = () => {
         }
     };
     
-
     const onClassDelete = async (id) =>{
         try {
             await classesService.deleteClassById(id);

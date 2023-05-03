@@ -44,8 +44,7 @@ const ClientsEdit = () => {
     }
   };
 
-
-
+  
   return (
     <>
       <h1>Edit Clients' List</h1>
