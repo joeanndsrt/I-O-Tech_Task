@@ -1,1 +1,1 @@
-# iotechTask
+npm install > npm start
